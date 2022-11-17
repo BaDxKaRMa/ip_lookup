@@ -1,11 +1,11 @@
-# README
+# IP Lookup Tool
 
-New project generated from my cookiecutter template.
+Search a reference CSV for an IP Address (using CIDR lookups).
 
 ## Features
 
 1. Logging via Loguru
-3. Dockerfile to run the script in a container
+2. Dockerfile to run the script in a container
 
 ## Usage
 
@@ -28,4 +28,5 @@ docker run ip_lookup:latest 10.1.1.1 --debug
 ```
 
 ## Demo
-![](img/demo.gif)
+
+![Demo GIF](img/demo.gif)

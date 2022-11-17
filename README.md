@@ -26,3 +26,6 @@ Build image and run
 docker build -t ip_lookup .
 docker run ip_lookup:latest 10.1.1.1 --debug
 ```
+
+## Demo
+![](img/demo.gif)

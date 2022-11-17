@@ -14,7 +14,9 @@ Search a reference CSV for an IP Address (using CIDR lookups).
 First run to setup virtualenv and run locally with debugging.
 
 ```bash
-mkvenv
+python -m venv venv
+source venv/bin/activate
+python -m pip install -r requirements.txt
 ./main.py 10.1.1.1 --debug
 ```
 

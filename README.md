@@ -23,6 +23,6 @@ mkvenv
 Build image and run
 
 ```bash
-docker build -t ipdb .
-docker run ipdb:latest 10.1.1.1 --debug
+docker build -t ip_lookup .
+docker run ip_lookup:latest 10.1.1.1 --debug
 ```

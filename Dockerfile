@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Set working directory
-WORKDIR /app
+WORKDIR /src
 
 # copy project
 COPY src/ .

@@ -3,7 +3,8 @@
 
 import argparse
 import sys
-from ipaddress import ip_address, ip_network
+import os
+from ipaddress import IPv4Address, ip_address, ip_network
 
 try:
     from loguru import logger
@@ -66,6 +67,9 @@ def load_networks(file):
     Returns:
     networks (list of dict): Collection of networks from file. Each network is a dict.
     """
+    # check if working directory is src
+    if not os.getcwd().endswith("src"):
+        os.chdir("src")
     collected_networks = []
     logger.debug(f"Loading {file}")
     try:
@@ -82,7 +86,7 @@ def load_networks(file):
         sys.exit(1)
 
 
-def convert_to_ip_address(input_ip) -> ip_address:
+def convert_to_ip_address(input_ip) -> IPv4Address:
     """
     Validates if IP address is valid.
 
@@ -98,11 +102,14 @@ def convert_to_ip_address(input_ip) -> ip_address:
 
 def search_networks(search_ip, sourced_networks):
     for network in sourced_networks:
-        if search_ip in ip_network(network['CIDR']):
+        if search_ip in ip_network(network["CIDR"]):
             logger.success(f"Found {search_ip} in {network['CIDR']}")
-            print(f"IP Address: {search_ip} found in {network['CIDR']} - {network['Description']}")
+            print(
+                f"IP Address: {search_ip} found in {network['CIDR']} - {network['Description']}"
+            )
             return network
     logger.error(f"Could not find {search_ip} in any networks")
+
 
 if __name__ == "__main__":
     # Parse the arguments

@@ -1,0 +1,3 @@
+CIDR,Description
+192.168.0.0/16,Network1
+10.0.0.0/8,Network2

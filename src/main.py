@@ -103,7 +103,7 @@ def search_networks(search_ip, sourced_networks):
         if search_ip in ip_network(network["CIDR"]):
             logger.success(f"Found {search_ip} in {network['CIDR']}")
             print(
-                f"IP Address: {search_ip} found in {network['CIDR']} - {network['Description']}"
+                f"{search_ip} found in {network['CIDR']} - {network['Description']}"
             )
             return network
     logger.error(f"Could not find {search_ip} in any networks")

@@ -68,8 +68,7 @@ def load_networks(file):
     networks (list of dict): Collection of networks from file. Each network is a dict.
     """
     # check if working directory is src
-    if not os.getcwd().endswith("src"):
-        os.chdir("src")
+    os.chdir(os.path.dirname(__file__))
     collected_networks = []
     logger.debug(f"Loading {file}")
     try:
